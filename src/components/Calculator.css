@@ -1,0 +1,106 @@
+.mainwrapper {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calcbody {
+  border: 1px solid #fff;
+  width: 500px;
+  height: 597px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 95px;
+  background-color: #848693;
+  text-align: end;
+  margin: 0;
+  padding-right: 12px;
+}
+
+.result {
+  color: #e0e0e0;
+  font-size: 1.5rem;
+}
+
+.keypad {
+  width: 100%;
+  height: 500px;
+  display: flex;
+}
+
+.numbers {
+  background-color: #e0e0e0;
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.numbers li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 124.5px;
+  height: 20%;
+  border: 1px solid #d1d1d1;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.lizero {
+  flex: 2;
+}
+
+.aritmetic {
+  width: 25%;
+  height: 100%;
+  background-color: #f5903e;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.aritmetic li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  height: 20%;
+  border: 1px solid #d1d1d1;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.numbers li button {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+.aritmetic li button {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: 1.01em;
+}

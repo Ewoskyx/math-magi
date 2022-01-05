@@ -5,7 +5,7 @@
 > Evren Ersoy Math Magicians project.
 
 
-
+![screenshot](./calc.PNG)
 Additional description of the project and its features.
 Microverse project series:
 
