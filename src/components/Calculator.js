@@ -1,40 +1,60 @@
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import './Calculator.css';
+import calculate from '../logic/calculate';
+import Nums from './Nums';
+import Operator from './Operator';
+import { keyboard, operators } from './Keyboard';
 
 export default class calculator extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      calculatorObj: {},
+    };
+  }
+
+  clickHandler = (e) => {
+    const { calculatorObj } = this.state;
+    const buttonName = e.target.innerText;
+    const dataObj = calculate(calculatorObj, buttonName);
+    this.setState({ calculatorObj: dataObj });
+  }
+
   render() {
+    const { calculatorObj: { total, next, operation } } = this.state;
+    const screen = `${((total || '') + (operation || '') + (next || '')) || '0'}`;
     return (
-      <div className="mainwrapper<button>">
+      <>
         <div className="calcbody">
-          <div className="display"><span className="result">0</span></div>
+          <div className="display"><p className="result">{screen}</p></div>
           <div className="keypad">
             <ul className="numbers">
-              <li><button type="submit">AC</button></li>
-              <li><button type="submit">+/-</button></li>
-              <li><button type="submit">%</button></li>
-              <li><button type="submit">7</button></li>
-              <li><button type="submit">8</button></li>
-              <li><button type="submit">9</button></li>
-              <li><button type="submit">4</button></li>
-              <li><button type="submit">5</button></li>
-              <li><button type="submit">6</button></li>
-              <li><button type="submit">1</button></li>
-              <li><button type="submit">2</button></li>
-              <li><button type="submit">3</button></li>
-              <li className="lizero"><button type="submit">0</button></li>
-              <li><button type="submit">.</button></li>
+              {keyboard.map((item) => {
+                const { id, buttonName } = item;
+                return (
+                  <Nums
+                    key={id}
+                    buttonName={buttonName}
+                    clickHandler={this.clickHandler}
+                  />
+                );
+              })}
             </ul>
             <ul className="aritmetic">
-              <li><button type="submit">÷</button></li>
-              <li><button type="submit">x</button></li>
-              <li><button type="submit">-</button></li>
-              <li><button type="submit">+</button></li>
-              <li><button type="submit">=</button></li>
+              {operators.map((item) => {
+                const { id, buttonName } = item;
+                return (
+                  <Operator
+                    key={id}
+                    buttonName={buttonName}
+                    clickHandler={this.clickHandler}
+                  />
+                );
+              })}
             </ul>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
