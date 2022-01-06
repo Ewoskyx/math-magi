@@ -1,9 +1,3 @@
-.mainwrapper {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .calcbody {
   border: 1px solid #fff;
   width: 500px;
@@ -64,10 +58,6 @@
   padding: 0;
 }
 
-.lizero {
-  flex: 2;
-}
-
 .aritmetic {
   width: 25%;
   height: 100%;
@@ -92,15 +82,21 @@
   padding: 0;
 }
 
-.numbers li button {
+.numbers li button,
+.aritmetic li button {
   background-color: transparent;
-  border: none;
   font-weight: bold;
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
 }
 
 .aritmetic li button {
-  background-color: transparent;
-  border: none;
-  font-weight: bold;
-  font-size: 1.01em;
+  font-size: 1.05rem;
+}
+
+.numbers li button:hover,
+.aritmetic li button:hover {
+  color: dodgerblue;
 }
