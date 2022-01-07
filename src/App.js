@@ -1,14 +1,11 @@
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Calculator from './components/Calculator';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Calculator />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <Calculator />
+  </div>
+);
+
+export default App;

@@ -1,21 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Nums extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+const Nums = ({ clickHandler, buttonName }) => (
+  <>
+    <li buttonName={buttonName}><button type="button" onClick={clickHandler}>{buttonName}</button></li>
+  </>
+);
 
-  render() {
-    const { clickHandler, buttonName } = this.props;
-    return (
-      <>
-        <li><button type="button" onClick={clickHandler}>{buttonName}</button></li>
-      </>
-    );
-  }
-}
+export default Nums;
 
 Nums.propTypes = {
   buttonName: PropTypes.string.isRequired,
