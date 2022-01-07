@@ -6,6 +6,7 @@
 
 
 ![screenshot](./calc.PNG)
+![updated-scr-shot](./calc2.PNG)
 Additional description of the project and its features.
 Microverse project series:
 
@@ -23,7 +24,7 @@ Microverse project series:
 ## Live Demo
 
 You can check the link below for the live demo.
-N/A yet.
+https://ewoskyx.github.io/math-magi/
 
 
 ## Getting Started

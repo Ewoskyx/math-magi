@@ -1,21 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Operator extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+const Operator = ({ clickHandler, buttonName }) => (
+  <>
+    <li><button type="button" onClick={clickHandler}>{buttonName}</button></li>
+  </>
+);
 
-  render() {
-    const { clickHandler, buttonName } = this.props;
-    return (
-      <>
-        <li><button type="button" onClick={clickHandler}>{buttonName}</button></li>
-      </>
-    );
-  }
-}
+export default Operator;
 
 Operator.propTypes = {
   buttonName: PropTypes.string.isRequired,

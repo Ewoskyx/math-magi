@@ -1,13 +1,16 @@
 .calcbody {
-  border: 1px solid #fff;
+  border: none;
+  box-shadow: inset -3px -3px 5px #ffffff90, 3px 3px 15px #00000070;
   width: 500px;
   height: 597px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: 0;
+  margin: 12px;
   padding: 0;
   box-sizing: border-box;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .display {
@@ -16,15 +19,18 @@
   align-items: center;
   width: 100%;
   height: 95px;
-  background-color: #848693;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(111deg, rgba(0, 0, 0, 1) 0%, rgba(51, 51, 51, 1) 52%, rgba(34, 40, 49, 1) 100%);
+  box-shadow: inset -3px -3px 5px #ffffff70, inset 3px 3px 15px #00000070;
   text-align: end;
   margin: 0;
   padding-right: 12px;
+  overflow: hidden;
 }
 
 .result {
   color: #e0e0e0;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .keypad {
@@ -52,7 +58,7 @@
   list-style: none;
   width: 124.5px;
   height: 20%;
-  border: 1px solid #d1d1d1;
+  border: none;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -76,7 +82,7 @@
   list-style: none;
   width: 100%;
   height: 20%;
-  border: 1px solid #d1d1d1;
+  border: none;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -92,11 +98,29 @@
   cursor: pointer;
 }
 
+.numbers li button {
+  background: #d1d1d1;
+  box-shadow: -2px -2px 0 #ffffff70, 3px 3px 10px #00000070;
+}
+
 .aritmetic li button {
   font-size: 1.05rem;
+  background-color: #f5903e;
+  box-shadow: -2px -2px 0 #ffffff70, 3px 3px 15px #00000070;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .numbers li button:hover,
 .aritmetic li button:hover {
   color: dodgerblue;
+}
+
+.numbers li button:active,
+.aritmetic li button:active {
+  box-shadow: inset -1px -2px 2px #ffffff70, inset 3px 3px 25px #00000070;
+  transition: all 170ms ease-in-out;
+}
+
+.numbers li[buttonName="0"] {
+  flex: 2;
 }
