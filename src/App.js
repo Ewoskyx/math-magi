@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Calculator from './components/Calculator';
+import Home from './pages/Home';
 
 const App = () => (
   <div className="App">
-    <Calculator />
+    <Home />
   </div>
 );
 
