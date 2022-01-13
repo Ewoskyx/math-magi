@@ -142,6 +142,6 @@
   transition: all 170ms ease-in-out;
 }
 
-.numbers li[buttonName="0"] {
+.numbers li[btnName="0"] {
   flex: 2;
 }
