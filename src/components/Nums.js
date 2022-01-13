@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Nums = ({ clickHandler, buttonName }) => (
   <>
-    <li buttonName={buttonName}><button type="button" onClick={clickHandler}>{buttonName}</button></li>
+    <li data-testid="num-li" btnname={buttonName}><button type="button" onClick={clickHandler}>{buttonName}</button></li>
   </>
 );
 

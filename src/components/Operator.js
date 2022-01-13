@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Operator = ({ clickHandler, buttonName }) => (
   <>
-    <li><button type="button" onClick={clickHandler}>{buttonName}</button></li>
+    <li data-testid="oper-li"><button type="button" onClick={clickHandler}>{buttonName}</button></li>
   </>
 );
 
