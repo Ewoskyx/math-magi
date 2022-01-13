@@ -1,5 +1,5 @@
 import React from 'react';
-// import { render } from '@testing-library/react/';
+import { render } from '@testing-library/react/';
 import '@testing-library/jest-dom/extend-expect';
 import Calculator from '../components/Calculator';
 
@@ -23,4 +23,14 @@ it('matches snapshot 2 of Calculator component', () => {
     clickHandler={clickHandler}
   />).toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+it('renders the props of component correctly', () => {
+  const clickHandler = () => true;
+  const buttonName = 'AC';
+  const { getByTestId } = render(<Calculator
+    buttonName={buttonName}
+    clickHandler={clickHandler}
+  />);
+  expect(getByTestId('calc')).toHaveTextContent('AC');
 });

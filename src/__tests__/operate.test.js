@@ -24,3 +24,18 @@ it('throws error if there is no valid operator', () => {
   const operation = '?';
   expect(() => operate(6, 8, '?')).toThrow(`Unknown operation '${operation}'`);
 });
+
+it('return the sum of two number if parameter is "+"', () => {
+  const result = operate(3, 3, '+');
+  expect(result).toBe('6');
+});
+
+it('return the substraction of two number if parameter is "-"', () => {
+  const result = operate(4, 3, '-');
+  expect(result).toBe('1');
+});
+
+it('return the division of two number if parameter is "÷"', () => {
+  const result = operate(6, 2, '÷');
+  expect(result).toBe('3');
+});
