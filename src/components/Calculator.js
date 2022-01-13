@@ -20,7 +20,7 @@ const calculator = () => {
         <h3>Let&apos;s do some math!</h3>
       </div>
       <div className="calcbody">
-        <div className="display"><p className="result">{screen}</p></div>
+        <div className="display"><p className="result" data-testid="display">{screen}</p></div>
         <div className="keypad">
           <ul className="numbers">
             {keyboard.map((item) => {

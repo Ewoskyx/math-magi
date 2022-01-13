@@ -1,23 +1,15 @@
+/* eslint-disable max-len */
 import React from 'react';
-import { render } from '@testing-library/react/';
+import { fireEvent, render } from '@testing-library/react/';
 import '@testing-library/jest-dom/extend-expect';
 import Calculator from '../components/Calculator';
+import calculate from '../logic/calculate';
 
 const renderer = require('react-test-renderer');
 
 it('matches snapshot 1 of Calculator component', () => {
   const clickHandler = () => true;
   const buttonName = '5';
-  const tree = renderer.create(<Calculator
-    buttonName={buttonName}
-    clickHandler={clickHandler}
-  />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-it('matches snapshot 2 of Calculator component', () => {
-  const clickHandler = () => true;
-  const buttonName = '9';
   const tree = renderer.create(<Calculator
     buttonName={buttonName}
     clickHandler={clickHandler}
@@ -33,4 +25,17 @@ it('renders the props of component correctly', () => {
     clickHandler={clickHandler}
   />);
   expect(getByTestId('calc')).toHaveTextContent('AC');
+});
+
+it('should perform user interaction', () => {
+  const { getByRole } = render(<Calculator />);
+  const btn = getByRole('button', { name: /=/i });
+  const calcObj = {
+    total: '3',
+    next: '4',
+    operation: '+',
+  };
+  fireEvent.click(btn, { target: { innerText: '=' } });
+  const result = calculate(calcObj, btn.value);
+  expect(result.total).toBe('7');
 });

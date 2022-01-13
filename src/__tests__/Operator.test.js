@@ -24,13 +24,3 @@ it('matches snapshot 1 of Operator component', () => {
   />).toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-it('matches snapshot 2 of Operator component', () => {
-  const clickHandler = () => true;
-  const buttonName = 'x';
-  const tree = renderer.create(<Operator
-    buttonName={buttonName}
-    clickHandler={clickHandler}
-  />).toJSON();
-  expect(tree).toMatchSnapshot();
-});

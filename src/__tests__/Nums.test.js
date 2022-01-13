@@ -24,13 +24,3 @@ it('matches snapshot 1 of Num component', () => {
   />).toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-it('matches snapshot 2 of Num component', () => {
-  const clickHandler = () => true;
-  const buttonName = '9';
-  const tree = renderer.create(<Nums
-    buttonName={buttonName}
-    clickHandler={clickHandler}
-  />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
