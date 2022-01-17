@@ -23,9 +23,10 @@ Microverse project series:
 
 ## Live Demo
 
-You can check the link below for the live demo.
-https://ewoskyx.github.io/math-magi/
-
+You can check the links below for the live demo.
+> GH Pages: https://ewoskyx.github.io/math-magi/ <br>
+> Heroku: https://math-magicians-project.herokuapp.com/ <br>
+> Netlify: https://math-magi.netlify.app/
 
 ## Getting Started
 
